@@ -7,7 +7,7 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-echo "Would you like to chmod the file? (y/n)"
+echo "Would you like to chmod a file? (y/n)"
 read choice
 
 if [ "$choice" == "y" ]; then
@@ -17,6 +17,7 @@ if [ "$choice" == "y" ]; then
   chmod +x "$filename"
 fi
 
+read branch
+
 git push origin $branch
 
-read
