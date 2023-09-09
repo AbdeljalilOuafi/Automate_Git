@@ -12,7 +12,7 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-echo -e "${GREEN}Would you like to chmod the file? (y/n)${NC}"
+echo -e "${GREEN}Would you like to chmod a file? (y/n)${NC}"
 read choice
 
 if [ "$choice" == "y" ]; then
