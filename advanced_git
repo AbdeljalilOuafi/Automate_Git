@@ -1,12 +1,13 @@
 #!/bin/bash
 
-# ANSI escape codes for text colors
-GREEN='\033[0;32m'   # Green
-NC='\033[0m'         # No Color (resets color to default)
+GREEN='\033[0;32m'   
+PURPLE='\033[0;35m'
+YELLOW='\033[0;33m'
+NC='\033[0m'         
 
 git add .
 
-echo -e "${GREEN}Enter the commit message:${NC}"
+echo -e "${YELLOW}Enter the commit message:${NC}"
 read commitMessage
 
 git commit -m "$commitMessage"
@@ -28,6 +29,11 @@ if [ "$choice" == "y" ]; then
   fi
 fi
 
-git push origin $branch
+echo -e "${PURPLE}Enter the branch name (or leave empty for default 'git push')${NC}"
+read branch
 
-read
+if [ -z "$branch" ]; then
+	  git push
+  else
+	    git push origin "$branch"
+fi
