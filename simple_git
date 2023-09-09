@@ -1,13 +1,17 @@
 #!/bin/bash
 
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
 git add .
 
-echo 'Enter the commit message:'
+echo -e "${YELLOW}Enter the commit message:${NC}"
 read commitMessage
 
 git commit -m "$commitMessage"
 
-echo 'Enter the branch name (or leave empty for default "git push"):'
+echo "${GREEN}Enter the branch name (or leave empty for default "git push")${NC}"
 read branch
 
 if [ -z "$branch" ]; then
