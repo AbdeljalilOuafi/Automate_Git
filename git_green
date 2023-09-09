@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# ANSI escape codes for text colors
+GREEN='\033[0;32m'   # Green
+NC='\033[0m'         # No Color (resets color to default)
+
+git add .
+
+echo -e "${GREEN}Enter the commit message:${NC}"
+read commitMessage
+
+git commit -m "$commitMessage"
+
+echo -e "${GREEN}Would you like to chmod the file? (y/n)${NC}"
+read choice
+
+if [ "$choice" == "y" ]; then
+  echo -e "${GREEN}Enter the filename to chmod:${NC}"
+  ls
+  read filename
+
+  # Check if the file exists before attempting to chmod
+  if [ -e "$filename" ]; then
+    chmod +x "$filename"
+    echo -e "${GREEN}File '$filename' has been chmodded.${NC}"
+  else
+    echo -e "${RED}File '$filename' does not exist.${NC}"
+  fi
+fi
+
+git push origin $branch
+
+read
