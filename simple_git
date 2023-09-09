@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PURPLE='\033[0;32m'
+PURPLE='\033[0;35m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
 
