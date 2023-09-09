@@ -11,7 +11,7 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-echo "${GREEN}Enter the branch name (or leave empty for default "git push")${NC}"
+echo -e "${GREEN}Enter the branch name (or leave empty for default "git push")${NC}"
 read branch
 
 if [ -z "$branch" ]; then
